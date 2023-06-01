@@ -1,0 +1,134 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
+
+.logo img {
+    width: 58px;
+    margin-right: 12px;
+    transform: rotate(45deg);
+}
+.logo h1 {
+    font-weight: bold;
+    margin: 0;
+    color: #fdbf00;
+}
+header {
+    padding: 0px 20px;
+}
+.login-btn a {
+    text-decoration: none;
+    padding-left: 12px;
+    color: var(--black);
+}
+.login-btn a:hover,
+.login-btn i:hover {
+    color: var(--secondary);
+}
+.login-btn i {
+    color: var(--black);
+    padding: 8px 0;
+    padding-right: 12px;
+    border-right: 1px solid;
+    cursor: pointer;
+}
+nav {
+    background: var(--secondary);
+}
+.nav-link:hover {
+    color: var(--secondary) !important;
+}
+.navbar .navbar-nav .nav-link {
+    color: white !important;
+}
+.profile img {
+    object-fit: cover;
+    width: 42px;
+    margin-left: 9px;
+    border-radius: 50%;
+    cursor: pointer;
+    border: 3px solid white;
+}
+
+.navbar .navbar-nav .nav-link {
+    color: #000000;
+    font-size: 1.1em;
+}
+.navbar .navbar-nav .nav-link:hover {
+    color: #808080;
+}
+
+.circular-image {
+    margin: auto;
+    width: 75px;
+    height: 75px;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+    padding: 4px;
+}
+.circular-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.tooltip .tooltip-arrow {
+  display: none !important;
+}
+
+@media only screen and (min-width: 960px) {
+    .dropdown:hover .dropdown-menu {
+        display: block;
+        margin-top: 0;
+    }
+    .dropdown .dropdown-menu {
+        display: none;
+    }
+    .dropdown:hover .dropdown-toggle::after {
+        border-bottom: 0.3em solid;
+        border-top: 0;
+    }
+}
+@media screen and (max-width: 991px) {
+    .dropdown-toggle.show::after {
+        border-top: 0;
+        border-bottom: 0.3em solid;
+    }
+}
+
+@media screen and (max-width: 760px) {
+    .login-btn a,
+    .login-btn i {
+        font-size: 0.8rem;
+    }
+    .logo h1 {
+        font-size: 1.2rem !important;
+    }
+    .logo img {
+        width: 40px;
+    }
+    .nav-item a {
+        font-size: 0.9rem !important;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .login-btn a,
+    .login-btn i {
+        font-size: 0.7rem;
+        padding-left: 6px;
+    }
+    .logo h1 {
+        font-size: 1.1rem !important;
+    }
+    .logo img {
+        width: 35px;
+    }
+    .nav-item a {
+        font-size: 0.8rem !important;
+        padding-left: 6px;
+    }
+    header {
+        padding: 0 12px;
+    }
+}

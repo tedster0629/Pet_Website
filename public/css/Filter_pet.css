@@ -1,0 +1,25 @@
+.cards-container {
+    max-height: 100vh;
+}
+
+.card {
+    max-width: 840px;
+}
+
+.card-img {
+    height: 100%;
+    object-fit: cover;
+}
+
+div.filter-container {
+    background-color: white;
+}
+
+button.btn {
+    background-color: var(--secondary);
+    border-color: var(--secondary);
+}
+
+.navbar {
+    z-index: 2000 !important;
+}

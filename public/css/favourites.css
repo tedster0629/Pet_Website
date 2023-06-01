@@ -1,0 +1,36 @@
+.favourite-pet-image {
+  height: 177px;
+  width: 234px;
+  position: relative;
+}
+.favourite-pet-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.favourite-pet-card {
+  border: 1px solid var(--border);
+  border-radius: 15px;
+  overflow: hidden;
+  min-width: 236px;
+  margin: 10px;
+}
+.favourite-pet-content {
+  padding: 10px;
+}
+.favourite-pet-content h3 {
+  font-size: 1.2rem;
+}
+.favourite-pet-content p {
+  color: var(--black);
+  font-size: 0.9rem;
+}
+.favourite-icon {
+  position: absolute;
+  top: 10px;
+  left: 193px;
+  padding: 7px;
+  border-radius: 50%;
+  background: snow;
+  color: red;
+}

@@ -1,0 +1,236 @@
+{
+	"info": {
+		"_postman_id": "6574b1f5-bb4f-49a9-befd-9338820c8c2e",
+		"name": "PetFinder",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "6957369"
+	},
+	"item": [
+		{
+			"name": "https://api.petfinder.com/v2/oauth2/token",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var jsonData = pm.response.json();",
+							"let accessToken = jsonData.access_token",
+							"console.log(accessToken);",
+							"//pm.setEnvironmentVariable(\"access_token\", accessToken)",
+							"",
+							"",
+							"pm.environment.set(\"access_token\", jsonData.access_token);",
+							"",
+							"pm.test(\"check token type\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.token_type).to.eql('Bearer');",
+							"});",
+							"",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "grant_type",
+							"value": "client_credentials",
+							"type": "text"
+						},
+						{
+							"key": "client_id",
+							"value": "9P8x2EiDH7wCECRY9SvbEAbskkS3xjk7imdTeQ2RBvI609x1qX",
+							"type": "text"
+						},
+						{
+							"key": "client_secret",
+							"value": "9tuuMeVIDgfA8AGp9rMVLxqCIGEareYEw3DVSzF0",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://api.petfinder.com/v2/oauth2/token",
+					"protocol": "https",
+					"host": [
+						"api",
+						"petfinder",
+						"com"
+					],
+					"path": [
+						"v2",
+						"oauth2",
+						"token"
+					]
+				},
+				"description": "To fetch the accessToken"
+			},
+			"response": []
+		},
+		{
+			"name": "{{basesite}}animals?type=dog&page=1",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"pm.test(\"Access token should be filled\", function () {",
+							"    pm.expect(pm.environment.get(\"access_token\")).to.not.be.empty;",
+							"});",
+							"",
+							""
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"const data1 = pm.response.body;",
+							"console.log(data1);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{access_token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{basesite}}animals?type=dog",
+					"host": [
+						"{{basesite}}animals"
+					],
+					"query": [
+						{
+							"key": "type",
+							"value": "dog"
+						}
+					]
+				},
+				"description": "Get Animal of specific type"
+			},
+			"response": []
+		},
+		{
+			"name": "{{basesite}}animals?type=dog&page=1 Copy",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"pm.test(\"Access token should be filled\", function () {",
+							"    pm.expect(pm.environment.get(\"access_token\")).to.not.be.empty;",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Response should be okay to process\", function () {",
+							"    pm.response.to.not.be.error;",
+							"    pm.response.to.not.have.jsonBody(\"error\");",
+							"    pm.expect(pm.response.responseSize) >0 ",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{access_token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{basesite}}animals?type=dog&breed=pug&status=adoptable",
+					"host": [
+						"{{basesite}}animals"
+					],
+					"query": [
+						{
+							"key": "type",
+							"value": "dog"
+						},
+						{
+							"key": "breed",
+							"value": "pug"
+						},
+						{
+							"key": "status",
+							"value": "adoptable"
+						}
+					]
+				},
+				"description": "Get Animal of specific type"
+			},
+			"response": []
+		},
+		{
+			"name": "New Request",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "access_token",
+			"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiJUcEo5OGdITUtOMnlZeUsxRmJzZkY1aWVQWjlDekhPWFpDVVFhMTc1N3U5dWdmc3lsQyIsImp0aSI6ImIzZmUyYjJjYWE2MDgwYzQ4ZTUyMjRkYzg4MTYxNjc0MDM1NWY1N2VjNDU5NmIxOWJlYTUwYzliZjQ4ZTRkYjA5YjFjNmEwZTFjN2YwZjg5IiwiaWF0IjoxNjY5MDU2ODM2LCJuYmYiOjE2NjkwNTY4MzYsImV4cCI6MTY2OTA2MDQzNiwic3ViIjoiIiwic2NvcGVzIjpbXX0.Vjk2J5JVSMcovrqEY7M1JNj8O65gHYSbSixA0w1KaDSZDGC-FRiaVfFv0LS08M33zc1pQNbnZ39u2cgKmUro4kweIPsGEUaZyE7devlHMUoaLg3gXYwH1_m7vgACk8tlbe6L57HGdlxI7F32DsMOqHzsifWERrhvR415BaW46IIQlbC6zVGttWkC2rbT0VC3lA0aTkZ7lpokbnlAfYXtJPT9MP4Tpes-N5VgbB5uItp5C3AGoLmn0Nnxvigs6RUY_n5BuqDApqxsgRrbDvTc6C5PJKY7VWKoPSdnf5gf6r1X93vQsppslSZ3N7VkSX_qjDUjeB0EiA0xG0zB9_mUXw"
+		},
+		{
+			"key": "basesite",
+			"value": "api.petfinder.com/v2/"
+		}
+	]
+}

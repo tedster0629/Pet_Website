@@ -1,0 +1,183 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap");
+body {
+  color: #818181;
+  font-size: 15px;
+}
+
+.login-container div.login-image.login {
+  background-image: url(../images/login-image.jpg);
+}
+.login-container div.login-image.register {
+  background-image: url(../images/register-image.jpg);
+}
+
+a {
+  -webkit-transition: 0.3s all ease;
+  transition: 0.3s all ease;
+  color: var(--secondary);
+  font-weight: 500;
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--hoverColor);
+}
+
+.login-image,
+.authentication-container {
+  height: 100vh;
+  min-height: 500px;
+}
+
+.login-image {
+  left: 0;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  width: 100%;
+  position: relative;
+  height: 200px;
+  min-height: 200px;
+  z-index: 2;
+}
+
+@media (min-width: 768px) {
+  .login-image {
+    position: fixed;
+    width: 50%;
+    height: 100vh;
+  }
+}
+
+@media (min-width: 992px) {
+  .login-image {
+    position: fixed;
+    width: 50%;
+    height: 100vh;
+  }
+}
+
+@media (min-width: 1200px) {
+  .login-image {
+    position: fixed;
+    width: 60%;
+    height: 100vh;
+  }
+}
+
+.authentication-container {
+  right: 0;
+  position: relative;
+  z-index: 1;
+  padding: 5%;
+  /* padding: 6px 32px; */
+  width: 100%;
+  background: #fff;
+  height: 100%;
+}
+
+@media (min-width: 768px) {
+  .authentication-container {
+    position: absolute;
+    width: 50%;
+  }
+}
+
+@media (min-width: 992px) {
+  .authentication-container {
+    position: absolute;
+    width: 50%;
+  }
+}
+
+@media (min-width: 1200px) {
+  .authentication-container {
+    position: absolute;
+    width: 40%;
+  }
+}
+
+.authentication-container .title {
+  font-size: 50px;
+  color: #000;
+}
+
+.authentication-container .form-floating {
+  position: relative;
+  margin-bottom: 15px;
+}
+
+.authentication-container .form-floating .form-control {
+  height: 60px !important;
+  border-radius: 10px !important;
+}
+
+.authentication-container .form-floating .form-control:active,
+.authentication-container .form-floating .form-control:focus {
+  outline: none;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  border-color: var(--secondary);
+}
+
+.authentication-container .password-show-toggle {
+  cursor: pointer;
+  position: absolute;
+  right: 20px;
+  top: 15px;
+  z-index: 9;
+}
+
+.authentication-container .password-show-toggle span {
+  font-size: 20px;
+}
+
+.authentication-container .password-show-toggle span:before {
+  font-family: "unicons-line";
+  content: "\ebf8";
+}
+
+.authentication-container .password-show-toggle.active span:before {
+  content: "\ebaf";
+}
+
+.authentication-container .form-check {
+  margin-bottom: 30px;
+}
+
+.authentication-container .form-check .form-check-input {
+  border-color: #d1d1d1 !important;
+}
+
+.authentication-container .form-check .form-check-input:checked {
+  background-color: var(--secondary);
+  border-color: var(--secondary) !important;
+  outline: none;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+
+.authentication-container .form-check .form-check-input:focus,
+.authentication-container .form-check .form-check-input:active {
+  outline: none;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+
+.authentication-container .btn-primary {
+  border-radius: 10px;
+  background-color: var(--secondary);
+  border-color: var(--secondary);
+  height: 60px;
+  font-weight: 500;
+  -webkit-box-shadow: 0 15px 30px -7px rgba(119, 84, 246, 0.5);
+  box-shadow: 0 15px 30px -7px rgba(119, 84, 246, 0.5);
+  -webkit-transition: 0.3s all ease;
+  transition: 0.3s all ease;
+  font-size: 18px;
+}
+
+.authentication-container .btn-primary:hover {
+  background-color: var(--hoverColor);
+  border-color: var(--hoverColor);
+}

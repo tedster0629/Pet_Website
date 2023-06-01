@@ -1,0 +1,24 @@
+footer{
+    background: var(--secondary);
+}
+.footer-btn{
+    width: 100%;
+    outline: none;
+    background: TRANSPARENT;
+    BORDER: 3px solid white;
+    color: white;
+    font-weight: bold;
+    border-radius: 27px;
+    padding: 6px 10px;
+}
+.footer-btn:hover{
+    background-color: white;
+    color: var(--secondary);
+}
+
+.footer-list li a{
+    color: white !important;
+}
+.footer-list li a:hover{
+    color: var(--footer) !important;
+}

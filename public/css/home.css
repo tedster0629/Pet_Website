@@ -1,0 +1,160 @@
+body {
+  background-color: #efeef1;
+}
+
+.image-slider {
+  height: 100%;
+  width: 100%;
+}
+
+.swiper {
+  width: 100%;
+  height: 357px;
+}
+
+.swiper-slide img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+.swiper-slide {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.swiper-pagination-bullet {
+  margin-left: 10px;
+  background: var(--secondary) !important;
+}
+
+.swiper-pagination-bullet-active {
+  width: 29px !important;
+  border-radius: 12px !important;
+}
+
+.pet-options {
+  padding: 15px 0;
+}
+
+.pet-options div a img {
+  width: 100px;
+  margin-bottom: 11px;
+}
+.card{
+  margin-bottom: 30px;
+}
+.card a {
+  padding: 17px 30px;
+}
+.pet-options div {
+  margin: 15px;
+  min-width: 162px;
+}
+.card:hover {
+  border: 1px solid var(--secondary);
+  color: var(--secondary);
+}
+.pet-options div h1 {
+  color: var(--secondary);
+}
+
+.heading {
+  color: var(--secondary);
+}
+.adoption-process {
+  padding: 0 99.6px;
+}
+.adopt-pet-card img {
+  width: 264px;
+  height: 179px;
+  border-radius: 0.365rem;
+  object-fit: cover;
+  margin-bottom: 12px;
+}
+.adopt-pet-card {
+  padding: 12px;
+  border: 1px solid var(--border);
+  border-radius: 0.375rem;
+  margin: 10px;
+  width: 30%;
+  min-width: 295px;
+}
+.adopt-pet-card h3 {
+  font-weight: bold;
+  color: var(--black);
+}
+
+.featured-pet-image {
+  height: 177px;
+  width: 234px;
+  position: relative;
+}
+.featured-pet-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.favourite-icon {
+  position: absolute;
+  top: 10px;
+  left: 193px;
+  padding: 7px;
+  border-radius: 50%;
+  background: snow;
+  color: red;
+}
+
+.featured-pet-card {
+  border: 1px solid var(--border);
+  border-radius: 15px;
+  overflow: hidden;
+  min-width: 236px;
+  margin: 10px;
+}
+
+.featured-pet-card .featured-pet-content {
+  padding: 10px;
+}
+.featured-pet-content h3 {
+  font-size: 1.2rem;
+}
+.featured-pet-content p {
+  font-size: 0.9rem;
+  color: var(--black);
+}
+.achievement-card img {
+  object-fit: cover;
+  width: 100px;
+}
+.achievement-card {
+  display: flex;
+  align-items: center;
+  border: 1px solid var(--border);
+  border-radius: 0.375rem;
+  min-width: 250px;
+  margin: 10px;
+}
+
+@media screen and (max-width: 1200px) {
+  .pet-options{
+    flex-direction: column;
+  }
+  .card-container{
+    justify-content: space-evenly !important;
+    width: 100%;
+    margin: 0 !important;
+  }
+  .card{
+    margin: 15 !important;
+  }
+}
+@media screen and (max-width: 775px) {
+  .container{
+    margin: 0 !important;
+    max-width: none !important;
+  }
+}

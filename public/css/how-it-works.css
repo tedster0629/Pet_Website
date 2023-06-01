@@ -1,0 +1,47 @@
+.faq {
+  margin-top: 2rem;
+  padding-bottom: 1rem;
+  border-bottom: 2px solid var(--black);
+  cursor: pointer;
+}
+.question h3 {
+  font-size: 1.3rem;
+  color: var(--black);
+}
+.answer {
+  max-height: 0;
+  transition: max-height 1s ease;
+  overflow: hidden;
+  color: var(--black);
+}
+.answer p {
+  line-height: 1.6;
+}
+
+.question i {
+  color: var(--black);
+  transition: transform 0.5s ease-in;
+}
+
+.active .answer {
+  max-height: 500px;
+  animation: fade 0.5s ease-in-out;
+}
+
+.active i {
+  transform: rotate(180deg);
+}
+.question h3:hover{
+    color: var(--hoverColor);
+}
+
+@keyframes fade {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}
